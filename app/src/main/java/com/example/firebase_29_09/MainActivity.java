@@ -47,14 +47,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         readtxt();
-        name[0] = "sw1/cb1";
-        name[1] = "sw1/cb2";
+        name[0] = "sw1/cb0";
+        name[1] = "sw1/cb1";
+        name[2] = "sw1/cb2";
+        name[3] = "sw1/cb3";
         for(int i=0;i<7;i++){
             rename(textview,i);     //cap nhat ten
         }
+        for(int i=0;i<4;i++){
+        evenlisten(name[i],i);}
 
-        evenlisten(name[0],1);
-        evenlisten(name[1],2);
 
 
 
