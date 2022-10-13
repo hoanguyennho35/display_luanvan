@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     EditText et1 ;
     int im,tv;
     int ten;
-    String mau ="im1 tv3\n1\nswitch1 \ncambien1 \ncambien2";
+    String mau ="im3 tv7\n0 0 0\nswitch0 \nswitch1\nswitch2" +
+            "\ncambien0 \ncambien1\ncambien2\ncambien3";
     String[] name = new String[4];
     boolean a = false;
     FirebaseDatabase firedb = FirebaseDatabase.getInstance();
@@ -130,17 +131,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onStop() {
+        super.onStop();
         String data;
         data = "im"+String.valueOf(im)+" tv"+String.valueOf(tv)
                 +"\n";
         for(int i=0;i<im;i++){
             if(i==im-1)
-            data+=String.valueOf(iv[i])+"";
+                data+=String.valueOf(iv[i])+"";
             else
-                data+=String.valueOf(iv[i]);
+            {data+=String.valueOf(iv[i])+" ";}
         }
         data+="\n";
         for(int i=0;i<tv;i++){
@@ -150,6 +152,12 @@ public class MainActivity extends AppCompatActivity {
             data+="\n";
         }
         writetxt("data.txt",data,selection.taomoi);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
     public void loaddata(){
         try{
