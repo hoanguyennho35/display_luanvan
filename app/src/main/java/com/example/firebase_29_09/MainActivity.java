@@ -28,16 +28,16 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
-    TextView[] value = new TextView[3];
-    TextView[] textview = new TextView[3];
-    ImageView[] imageview = new ImageView[2];
-    boolean[] iv_bo = new boolean[2];
-    int[] iv= new int[2];       //luu gia tri den
+    TextView[] value = new TextView[4];
+    TextView[] textview = new TextView[7];
+    ImageView[] imageview = new ImageView[3];
+    boolean[] iv_bo = new boolean[3];
+    int[] iv= new int[3];       //luu gia tri den
     EditText et1 ;
     int im,tv;
     int ten;
     String mau ="im1 tv3\n1\nswitch1 \ncambien1 \ncambien2";
-    String[] name = new String[2];
+    String[] name = new String[4];
     boolean a = false;
     FirebaseDatabase firedb = FirebaseDatabase.getInstance();
     final DatabaseReference lightRef = firedb.getReference();
@@ -49,9 +49,10 @@ public class MainActivity extends AppCompatActivity {
         readtxt();
         name[0] = "sw1/cb1";
         name[1] = "sw1/cb2";
-        rename(textview,0);
-        rename(textview,1);
-        rename(textview,2);
+        for(int i=0;i<7;i++){
+            rename(textview,i);     //cap nhat ten
+        }
+
         evenlisten(name[0],1);
         evenlisten(name[1],2);
 
@@ -61,16 +62,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void initView(){
+        value[0] = findViewById(R.id.value0);
         value[1] = findViewById(R.id.value1);
         value[2] = findViewById(R.id.value2);
+        value[3] = findViewById(R.id.value3);
 
         imageview[0] = findViewById(R.id.imageView);
+        imageview[1] = findViewById(R.id.imageView1);
+        imageview[2] = findViewById(R.id.imageView2);
 
         textview[0] = findViewById(R.id.textview0);
         textview[1] = findViewById(R.id.textView1);
         textview[2] = findViewById(R.id.textView2);
+        textview[3] = findViewById(R.id.textView3);
+        textview[4] = findViewById(R.id.textView4);
+        textview[5] = findViewById(R.id.textView5);
+        textview[6] = findViewById(R.id.textView6);
+
         imageview[0].setOnClickListener(click);
+        imageview[1].setOnClickListener(click);
+        imageview[2].setOnClickListener(click);
     }
+
     View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -80,14 +93,38 @@ public class MainActivity extends AppCompatActivity {
                     iv_bo[0] = !iv_bo[0];
                     if(iv_bo[0])
                     {imageview[0].setImageResource(R.mipmap.lamp_on);
-                        setlisten("sw1/red",1);
+                        setlisten("sw1/sw0",1);
                         iv[0]=1;
                     }
                     else
                     {imageview[0].setImageResource(R.mipmap.lamp_off);
                         iv[0]=0;
-                        setlisten("sw1/red",0);}
+                        setlisten("sw1/sw0",0);}
                         break;
+                case R.id.imageView1:
+                    iv_bo[1] = !iv_bo[1];
+                    if(iv_bo[1])
+                    {imageview[1].setImageResource(R.mipmap.lamp_on);
+                        setlisten("sw1/sw1",1);
+                        iv[1]=1;
+                    }
+                    else
+                    {imageview[1].setImageResource(R.mipmap.lamp_off);
+                        iv[1]=0;
+                        setlisten("sw1/sw1",0);}
+                    break;
+                case R.id.imageView2:
+                    iv_bo[2] = !iv_bo[2];
+                    if(iv_bo[2])
+                    {imageview[2].setImageResource(R.mipmap.lamp_on);
+                        setlisten("sw1/sw2",1);
+                        iv[2]=1;
+                    }
+                    else
+                    {imageview[2].setImageResource(R.mipmap.lamp_off);
+                        iv[2]=0;
+                        setlisten("sw1/sw2",0);}
+                    break;
             }
         }
     };
