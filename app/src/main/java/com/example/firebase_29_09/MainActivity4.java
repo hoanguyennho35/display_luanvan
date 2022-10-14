@@ -81,6 +81,11 @@ public class MainActivity4 extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+    }
+
     public void setlisten(String src, String a){
         lightRef.child(src).setValue(a);
     }

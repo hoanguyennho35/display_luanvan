@@ -46,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent it = new Intent();
-        it.setClass(MainActivity.this,MainActivity3.class);
-        startActivity(it);
         initView();
         readtxt();
         name[0] = "sw1/cb0";

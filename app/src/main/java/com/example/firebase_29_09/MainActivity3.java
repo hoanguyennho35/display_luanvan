@@ -27,6 +27,8 @@ public class MainActivity3 extends AppCompatActivity {
     Button dn,qmk;
     FirebaseDatabase firedb1 = FirebaseDatabase.getInstance();
     DatabaseReference lightRef1 = firedb1.getReference();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,9 @@ public class MainActivity3 extends AppCompatActivity {
                     {   sl=3;khoa=1;
                         Toast.makeText(MainActivity3.this,"ban da dang nhap" +
                                 "thanh cong",Toast.LENGTH_SHORT).show();
-                        finish();
+                        Intent i1 = new Intent();
+                        i1.setClass(MainActivity3.this,MainActivity.class);
+                        startActivity(i1);
                     }
                     else{
                         sl--;
@@ -135,6 +139,18 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
     }
+    private long tim;
+    @Override
+    public void onBackPressed() {
+
+        if(tim+2000>System.currentTimeMillis()){
+            super.onBackPressed();
+            return;
+        }else
+            Toast.makeText(MainActivity3.this,"Nhap 2 click de thoat",Toast.LENGTH_SHORT).show();
+        tim=System.currentTimeMillis();
+    }
+
     public void setlisten(String src, int a){
         lightRef1.child(src).setValue(a);
     }

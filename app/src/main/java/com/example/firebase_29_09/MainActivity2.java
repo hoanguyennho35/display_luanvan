@@ -45,4 +45,9 @@ public class MainActivity2 extends AppCompatActivity {
             finish();
         }
     };
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+    }
 }
