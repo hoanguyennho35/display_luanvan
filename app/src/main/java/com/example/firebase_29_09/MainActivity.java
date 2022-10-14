@@ -260,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Integer cb1 = snapshot.getValue(Integer.class);
-                value[a].setText("cbien "+a+": " + cb1);
+                value[a].setText("" + cb1);
             }
 
             @Override

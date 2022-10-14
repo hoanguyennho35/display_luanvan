@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đăng nhập"
-        android:textSize="20dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,10 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="20dp"
         android:text="Tài khoản:"
         />
     <EditText
@@ -36,8 +38,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@+id/taikhoan"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginLeft="140dp"
+        android:layout_marginLeft="120dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
         android:id="@+id/tk"
+        android:hint="Name"
+        android:gravity="center"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -45,6 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/taikhoan"
         app:layout_constraintLeft_toLeftOf="@+id/taikhoan"
         android:text="Mật khẩu:"
+        android:textStyle="bold"
         android:textSize="20dp"
         android:layout_marginTop="10dp"
         android:id="@+id/matkhau"
@@ -54,7 +61,11 @@
         android:id="@+id/mk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
+        android:layout_marginLeft="120dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintLeft_toRightOf="@+id/matkhau"
         app:layout_constraintTop_toTopOf="@+id/matkhau" />
@@ -65,7 +76,7 @@
         android:id="@+id/dang_nhap"
         app:layout_constraintTop_toBottomOf="@+id/matkhau"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="70dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         />
     <Button
@@ -73,8 +84,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toRightOf="@+id/dang_nhap"
         app:layout_constraintTop_toTopOf="@+id/dang_nhap"
+        app:layout_constraintRight_toRightOf="parent"
         android:text="Đổi mật khẩu"
-        android:layout_marginLeft="30dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/doi_mat_khau"
         />
 
