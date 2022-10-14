@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:textSize="20dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/taikhoan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="40dp"
+        android:text="Tài khoản:"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/taikhoan"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginLeft="140dp"
+        android:id="@+id/tk"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/taikhoan"
+        app:layout_constraintLeft_toLeftOf="@+id/taikhoan"
+        android:text="Mật khẩu:"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/matkhau"
+        />
+
+    <EditText
+        android:id="@+id/mk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        app:layout_constraintLeft_toRightOf="@+id/matkhau"
+        app:layout_constraintTop_toTopOf="@+id/matkhau" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:id="@+id/dang_nhap"
+        app:layout_constraintTop_toBottomOf="@+id/matkhau"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/dang_nhap"
+        app:layout_constraintTop_toTopOf="@+id/dang_nhap"
+        android:text="Đổi mật khẩu"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/doi_mat_khau"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,13 +14,20 @@
         android:theme="@style/Theme.Firebase_29_09"
         tools:targetApi="31">
         <activity
-            android:label="FireBase"
-            android:name=".MainActivity2"
+            android:name=".MainActivity4"
             android:exported="false" />
         <activity
+            android:name=".MainActivity3"
+            android:exported="false"
+            android:label="Firebase"></activity>
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false"
+            android:label="FireBase" />
+        <activity
             android:name=".MainActivity"
-            android:label="FireBase"
-            android:exported="true">
+            android:exported="true"
+            android:label="FireBase">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
