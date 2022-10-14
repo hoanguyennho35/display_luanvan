@@ -63,6 +63,7 @@
         app:layout_constraintLeft_toRightOf="@id/mk1"
         app:layout_constraintTop_toTopOf="@+id/mk1"
         android:layout_marginLeft="130dp"
+        android:inputType="textPassword"
         android:hint="mật khẩu"
         android:id="@+id/edmk"
         android:gravity="center"
@@ -77,6 +78,7 @@
         android:layout_marginTop="0dp"
         android:hint="đổi mật khẩu"
         android:gravity="center"
+        android:inputType="textPassword"
         android:id="@+id/eddmk"
         android:textSize="20dp"
         />

@@ -23,7 +23,7 @@ public class MainActivity3 extends AppCompatActivity {
     String[] name =new String[2];
     String[] bien = new String[2];
     String[] g =new String[2];
-    int block_qmk;
+    int block_qmk=1;
     Button dn,qmk;
     FirebaseDatabase firedb1 = FirebaseDatabase.getInstance();
     DatabaseReference lightRef1 = firedb1.getReference();
@@ -74,11 +74,15 @@ public class MainActivity3 extends AppCompatActivity {
                     }
                     break;
                 case R.id.doi_mat_khau:
+                    if(block_qmk==1){
                     Intent i4 = new Intent();
                     i4.setClass(MainActivity3.this,MainActivity4.class);
                     i4.putExtra("taikhoan",bien[0]);
                     i4.putExtra("matkhau",bien[1]);
-                    startActivityForResult(i4,50);
+                    startActivityForResult(i4,50);}
+                    else{
+                        Toast.makeText(MainActivity3.this,"ban nhap doi sai mat khau qua nhieu lan",Toast.LENGTH_LONG).show();
+                    }
                     break;
             }
         }else
@@ -90,7 +94,9 @@ public class MainActivity3 extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode ==50){
-            block_qmk = data.getIntExtra("block");
+            block_qmk=data.getIntExtra("block_qmk",1);
+            tk.setText(data.getStringExtra("taikhoan1"));
+            mk.setText(data.getStringExtra("matkhau1"));
         }
     }
 
