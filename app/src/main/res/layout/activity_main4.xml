@@ -4,6 +4,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context=".MainActivity4">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp"
+        android:text="Đổi Mật Khẩu"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:id="@+id/dmk"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/dmk"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Tài Khoản: "
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tk1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tk1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Mật Khẩu: "
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/mk1"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/mk1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Mật Khẩu Mới: "
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/mk2"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/tk1"
+        app:layout_constraintTop_toTopOf="@+id/tk1"
+        android:layout_marginLeft="130dp"
+        android:hint="tên tài khoản"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/edtk"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/mk1"
+        app:layout_constraintTop_toTopOf="@+id/mk1"
+        android:layout_marginLeft="130dp"
+        android:hint="mật khẩu"
+        android:id="@+id/edmk"
+        android:gravity="center"
+        android:textSize="20dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/mk2"
+        app:layout_constraintTop_toTopOf="@+id/mk2"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="0dp"
+        android:hint="đổi mật khẩu"
+        android:gravity="center"
+        android:id="@+id/eddmk"
+        android:textSize="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/mk2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="   Đổi   "
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="25dp"
+        android:id="@+id/doi"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/mk2"
+        app:layout_constraintLeft_toRightOf="@+id/doi"
+        android:text="   Hủy   "
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="25dp"
+        android:id="@+id/huy"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

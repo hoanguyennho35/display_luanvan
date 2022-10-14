@@ -1,6 +1,7 @@
 package com.example.firebase_29_09;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,6 +23,7 @@ public class MainActivity3 extends AppCompatActivity {
     String[] name =new String[2];
     String[] bien = new String[2];
     String[] g =new String[2];
+    int block_qmk;
     Button dn,qmk;
     FirebaseDatabase firedb1 = FirebaseDatabase.getInstance();
     DatabaseReference lightRef1 = firedb1.getReference();
@@ -72,12 +74,26 @@ public class MainActivity3 extends AppCompatActivity {
                     }
                     break;
                 case R.id.doi_mat_khau:
+                    Intent i4 = new Intent();
+                    i4.setClass(MainActivity3.this,MainActivity4.class);
+                    i4.putExtra("taikhoan",bien[0]);
+                    i4.putExtra("matkhau",bien[1]);
+                    startActivityForResult(i4,50);
                     break;
             }
         }else
             Toast.makeText(MainActivity3.this,"ban da nhap sai qua so lan hay lien he nha cung cap",Toast.LENGTH_LONG).show();
         }
     };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode ==50){
+            block_qmk = data.getIntExtra("block");
+        }
+    }
+
     enum selection{
         _string,_int,solan,khoa
     }
