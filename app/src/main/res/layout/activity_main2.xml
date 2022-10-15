@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    tools:context=".MainActivity2">
+
+    tools:context=".MainActivity2"
+    android:background="#C1E9F8">
 
     <TextView
         android:id="@+id/tv_rename"
