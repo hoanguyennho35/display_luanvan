@@ -36,7 +36,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="259dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/lamp_off" />
+                    app:srcCompat="@mipmap/motor_off" />
 
                 <TextView
                     android:id="@+id/textview0"
@@ -58,7 +58,7 @@
                     android:id="@+id/imageView1"
                     android:layout_width="259dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/lamp_off" />
+                    app:srcCompat="@mipmap/motor_off" />
 
                 <TextView
                     android:id="@+id/textView1"
@@ -80,7 +80,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="259dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/lamp_off" />
+                    app:srcCompat="@mipmap/bell_off" />
 
                 <TextView
                     android:id="@+id/textView2"

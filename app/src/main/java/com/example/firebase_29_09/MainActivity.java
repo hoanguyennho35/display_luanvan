@@ -95,36 +95,36 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.imageView:
                     iv_bo[0] = !iv_bo[0];
                     if(iv_bo[0])
-                    {imageview[0].setImageResource(R.mipmap.lamp_on);
+                    {imageview[0].setImageResource(R.mipmap.motor_on);
                         setlisten("sw1/sw0",1);
                         iv[0]=1;
                     }
                     else
-                    {imageview[0].setImageResource(R.mipmap.lamp_off);
+                    {imageview[0].setImageResource(R.mipmap.motor_off);
                         iv[0]=0;
                         setlisten("sw1/sw0",0);}
                         break;
                 case R.id.imageView1:
                     iv_bo[1] = !iv_bo[1];
                     if(iv_bo[1])
-                    {imageview[1].setImageResource(R.mipmap.lamp_on);
+                    {imageview[1].setImageResource(R.mipmap.motor_on);
                         setlisten("sw1/sw1",1);
                         iv[1]=1;
                     }
                     else
-                    {imageview[1].setImageResource(R.mipmap.lamp_off);
+                    {imageview[1].setImageResource(R.mipmap.motor_off);
                         iv[1]=0;
                         setlisten("sw1/sw1",0);}
                     break;
                 case R.id.imageView2:
                     iv_bo[2] = !iv_bo[2];
                     if(iv_bo[2])
-                    {imageview[2].setImageResource(R.mipmap.lamp_on);
+                    {imageview[2].setImageResource(R.mipmap.bell_on);
                         setlisten("sw1/sw2",1);
                         iv[2]=1;
                     }
                     else
-                    {imageview[2].setImageResource(R.mipmap.lamp_off);
+                    {imageview[2].setImageResource(R.mipmap.bell_off);
                         iv[2]=0;
                         setlisten("sw1/sw2",0);}
                     break;
@@ -171,16 +171,32 @@ public class MainActivity extends AppCompatActivity {
             }
 
             for(int i=0;i<im;i++){
-                if(sc.hasNext()){
-                    if(Integer.parseInt(sc.next())==1){
-                        imageview[i].setImageResource(R.mipmap.lamp_on);
-                        iv[i]=1;
-                        iv_bo[i]=true;
+                if(i<2){
+                    if(sc.hasNext()){
+                        if(Integer.parseInt(sc.next())==1){
+                            imageview[i].setImageResource(R.mipmap.motor_on);
+                            iv[i]=1;
+                            iv_bo[i]=true;
+                        }
+                        else{
+                            imageview[i].setImageResource(R.mipmap.motor_off);
+                            iv[i]=0;
+                            iv_bo[i]=false;
+                        }
                     }
-                    else{
-                        imageview[i].setImageResource(R.mipmap.lamp_off);
-                        iv[i]=0;
-                        iv_bo[i]=false;
+                }
+                else{
+                    if(sc.hasNext()){
+                        if(Integer.parseInt(sc.next())==1){
+                            imageview[i].setImageResource(R.mipmap.bell_on);
+                            iv[i]=1;
+                            iv_bo[i]=true;
+                        }
+                        else{
+                            imageview[i].setImageResource(R.mipmap.bell_off);
+                            iv[i]=0;
+                            iv_bo[i]=false;
+                        }
                     }
                 }
             }
