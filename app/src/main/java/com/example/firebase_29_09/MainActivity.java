@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ekn.gruzer.gaugelibrary.ArcGauge;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +30,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
+    ArcGauge[] gauges = new ArcGauge[4];
     TextView[] value = new TextView[4];
     TextView[] textview = new TextView[7];
     ImageView[] imageview = new ImageView[3];
@@ -85,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
         imageview[0].setOnClickListener(click);
         imageview[1].setOnClickListener(click);
         imageview[2].setOnClickListener(click);
+
+        gauges[0] = (ArcGauge) findViewById(R.id.arcGauge0);
+        gauges[1] = (ArcGauge) findViewById(R.id.arcGauge1);
+        gauges[2] = (ArcGauge) findViewById(R.id.arcGauge2);
+        gauges[3] = (ArcGauge) findViewById(R.id.arcGauge3);
+
+        chartgauge(0,0,50f,0f); //nhiet do
+        chartgauge(0,1,14f,0f); //PH
+        chartgauge(0,2,20f,0f); //oxi
+        chartgauge(0,3,20f,0f); //EC
     }
 
     View.OnClickListener click = new View.OnClickListener() {
@@ -275,8 +288,9 @@ public class MainActivity extends AppCompatActivity {
         lightRef.child(src).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Integer cb1 = snapshot.getValue(Integer.class);
+                Double cb1 = snapshot.getValue(Double.class);
                 value[a].setText("" + cb1);
+                gauges[a].setValue(cb1);
             }
 
             @Override
@@ -289,5 +303,12 @@ public class MainActivity extends AppCompatActivity {
     //thiet lap tu firebase
     public void setlisten(String src, int a){
         lightRef.child(src).setValue(a);
+    }
+
+    public void chartgauge(double value,int stt,float max,float min){
+        gauges[stt].setMaxValue(max);
+        gauges[stt].setMinValue(min);
+        gauges[stt].setValue(value);
+        gauges[stt].setValueColor(Color.BLACK);
     }
 }
