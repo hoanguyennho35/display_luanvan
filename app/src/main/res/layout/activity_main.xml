@@ -64,7 +64,38 @@
             android:orientation="vertical"
             android:textSize="20dp">
 
-
+<!--            <TextView-->
+<!--                android:id="@+id/value0"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="0"-->
+<!--                android:textSize="20dp" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/value1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="0"-->
+<!--                android:textSize="20dp" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/value2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="0"-->
+<!--                android:textSize="20dp" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/value3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="0"-->
+<!--                android:textSize="20dp" />-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,10 +129,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="8dp"
                 android:orientation="horizontal">
-
                 <com.ekn.gruzer.gaugelibrary.ArcGauge
                     android:id="@+id/arcGauge0"
                     android:layout_gravity="left"

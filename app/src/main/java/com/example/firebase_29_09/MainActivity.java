@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initView();
         readtxt();
-        name[0] = "sw1/cb0";
-        name[1] = "sw1/cb1";
-        name[2] = "sw1/cb2";
-        name[3] = "sw1/cb3";
+        name[0] = "I Thong so cam bien/3 Cam bien Oxi(mg|L) ";
+        name[1] = "I Thong so cam bien/2 Cam bien PH(pH) ";
+        name[2] = "I Thong so cam bien/3 Cam bien Oxi(mg|L) ";
+        name[3] = "I Thong so cam bien/4 Cam bien EC(ms|cm) ";
         for(int i=0;i<7;i++){
             rename(textview,i);     //cap nhat ten
         }
@@ -109,37 +109,37 @@ public class MainActivity extends AppCompatActivity {
                     iv_bo[0] = !iv_bo[0];
                     if(iv_bo[0])
                     {imageview[0].setImageResource(R.mipmap.motor_on);
-                        setlisten("sw1/sw0",1);
+                        setlisten("II Dieu khien thiet bi/1 Motor 1(0|1)",1);
                         iv[0]=1;
                     }
                     else
                     {imageview[0].setImageResource(R.mipmap.motor_off);
                         iv[0]=0;
-                        setlisten("sw1/sw0",0);}
+                        setlisten("II Dieu khien thiet bi/1 Motor 1(0|1)",0);}
                         break;
                 case R.id.imageView1:
                     iv_bo[1] = !iv_bo[1];
                     if(iv_bo[1])
                     {imageview[1].setImageResource(R.mipmap.motor_on);
-                        setlisten("sw1/sw1",1);
+                        setlisten("II Dieu khien thiet bi/2 Motor 2(0|1)",1);
                         iv[1]=1;
                     }
                     else
                     {imageview[1].setImageResource(R.mipmap.motor_off);
                         iv[1]=0;
-                        setlisten("sw1/sw1",0);}
+                        setlisten("II Dieu khien thiet bi/2 Motor 2(0|1)",0);}
                     break;
                 case R.id.imageView2:
                     iv_bo[2] = !iv_bo[2];
                     if(iv_bo[2])
                     {imageview[2].setImageResource(R.mipmap.bell_on);
-                        setlisten("sw1/sw2",1);
+                        setlisten("II Dieu khien thiet bi/3 Coi bao(0|1)",1);
                         iv[2]=1;
                     }
                     else
                     {imageview[2].setImageResource(R.mipmap.bell_off);
                         iv[2]=0;
-                        setlisten("sw1/sw2",0);}
+                        setlisten("II Dieu khien thiet bi/3 Coi bao(0|1)",0);}
                     break;
             }
         }
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Double cb1 = snapshot.getValue(Double.class);
                 value[a].setText("" + cb1);
-                gauges[a].setValue(cb1);
+                gauges[a].setValue((double) cb1);
             }
 
             @Override
